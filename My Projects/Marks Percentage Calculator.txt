@@ -1,0 +1,20 @@
+package Percentage_Calculator;
+
+import java.util.Scanner;
+
+public class Percentage_Calculator {
+
+    public static void main(String[] args) {
+       Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter Your Obtained Marks");
+        float obtMarks = input.nextFloat();
+
+        System.out.println("Enter The Total Marks");
+        float totalMarks = input.nextFloat();
+
+        float result = obtMarks / totalMarks * 100;
+
+        System.out.println("The Percentage of Your Marks Is: " + result);
+    }
+}

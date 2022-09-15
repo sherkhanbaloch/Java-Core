@@ -1,0 +1,191 @@
+package Marks_Sheet;
+import java.util.Scanner;
+import java.time.LocalDate;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        LocalDate dateNow = LocalDate.now();
+
+        // Printing Heading of Marks Sheet
+        System.out.println("\t  Board of Intermediate & Secondary Education, Larkana");
+        System.out.println("\t\t\t\t\t\tMarks Certificate");
+        System.out.println("\t\t\t\tSSC-II Annual Examination 2020" + "\n");
+
+        // Taking Personal Information From User
+        System.out.println("Enter Your Roll No");
+        int rollNo = input.nextInt();
+
+        input.nextLine();
+
+        System.out.println("Enter Your Group");
+        String group = input.nextLine();
+
+        System.out.println("Enter Your Name");
+        String name = input.nextLine();
+
+        System.out.println("Enter Your Father's Name");
+        String fatherName = input.nextLine();
+
+        System.out.println("Enter Your Sur Name");
+        String surName = input.nextLine();
+
+        System.out.println("Enter Your Institute");
+        String institute = input.nextLine();
+
+        System.out.println("Enter Your District");
+        String district = input.nextLine();
+
+        System.out.println("Enter Your Date of Birth");
+        String dateOfBirth = input.nextLine();
+
+        // Taking Subject's Marks From User
+        System.out.println("Enter English-I Marks: (out of 75)");
+        int english1 = input.nextInt();
+
+        System.out.println("Enter Sindhi Marks: (out of 75)");
+        int sindhi = input.nextInt();
+
+        System.out.println("Enter Pakistan Studies Marks: (out of 75)");
+        int pakStudies = input.nextInt();
+
+        System.out.println("Enter Chemistry (TH) Marks: (out of 85)");
+        int chemistryTH = input.nextInt();
+
+        System.out.println("Enter Chemistry (PR) Marks: (out of 15)");
+        int chemistryPR = input.nextInt();
+
+        System.out.println("Enter Biology (TH) Marks: (out of 85)");
+        int biologyTH = input.nextInt();
+
+        System.out.println("Enter Biology (PR) Marks: (out of 15)");
+        int biologyPR = input.nextInt();
+
+        System.out.println("Enter English-II Marks: (out of 75)");
+        int english2 = input.nextInt();
+
+        System.out.println("Enter Urdu Salis Marks: (out of 75)");
+        int urdu = input.nextInt();
+
+        System.out.println("Enter Islamiat Marks: (out of 75)");
+        int islamiat = input.nextInt();
+
+        System.out.println("Enter Physics (TH) Marks: (out of 85)");
+        int physicsTH = input.nextInt();
+
+        System.out.println("Enter Physics (PR) Marks: (out of 15)");
+        int physicsPR = input.nextInt();
+
+        System.out.println("Enter Elective Maths Marks: (out of 100)");
+        int maths = input.nextInt();
+
+        // Calculating Marks of Total Subjects
+        int obtMarks = english1 + sindhi + pakStudies + chemistryTH + chemistryPR + biologyTH + biologyPR + english2 + urdu + islamiat + physicsTH + physicsPR + maths;
+
+        // Calculating Percentage of Total Marks
+        float percentage = obtMarks / 850f * 100;
+
+        // Printing Marks Sheet (Starts Here)
+        System.out.println("\t  Board of Intermediate & Secondary Education, Larkana");
+        System.out.println("\t\t\t\t\t\tMarks Certificate");
+
+        System.out.println("\t\t\t\t\t\t\t\t\t\t" + "Roll No:" + rollNo);
+        System.out.println("\t\t\t\t\t\t\t\t\t\t" + "Group:"  + group);
+
+        System.out.println("\t\t\t\tSSC-II Annual Examination 2020" + "\n");
+
+        System.out.println("Name: " + name);
+        System.out.println("Father's Name: "+ fatherName);
+        System.out.println("Sur Name: " + surName);
+        System.out.println("Institute: " + institute);
+        System.out.println("District: " + district + "\n");
+
+        // Printing Marks Table Using 2-D Arrays
+        String [][] table = {
+//                {"-------------------------------------------------------------"},
+                {"Subjects", "\tMax Marks", "Min Marks", "Obt. Marks", "Remarks"},
+//                {"-------------------------------------------------------------"},
+                {"English-I", "\t\t75", "\t\t25", "\t", String.valueOf(english1)},
+//                {"-------------------------------------------------------------"},
+                {"Sindhi", "\t\t\t75", "\t\t25", "\t", String.valueOf(sindhi) },
+//                {"-------------------------------------------------------------"},
+                {"Pakistan Studies", "75", "\t\t25", "\t", String.valueOf(pakStudies) },
+//                {"-------------------------------------------------------------"},
+                {"Chemistry (TH)", "\t85", "\t\t28", "\t", String.valueOf(chemistryTH) },
+//                {"-------------------------------------------------------------"},
+                {"Chemistry (PR)", "\t15", "\t\t5", "\t", String.valueOf(chemistryPR) },
+//                {"-------------------------------------------------------------"},
+                {"Biology (TH)", "\t85", "\t\t28", "\t", String.valueOf(biologyTH) },
+//                {"-------------------------------------------------------------"},
+                {"Biology (PR)", "\t15", "\t\t5", "\t", String.valueOf(biologyPR) },
+//                {"-------------------------------------------------------------"},
+                {"English-II", "\t\t75", "\t\t25", "\t", String.valueOf(english2) },
+//                {"-------------------------------------------------------------"},
+                {"Urdu Salis", "\t\t75", "\t\t25", "\t", String.valueOf(urdu) },
+//                {"-------------------------------------------------------------"},
+                {"Islamiat", "\t\t75", "\t\t25", "\t", String.valueOf(islamiat) },
+//                {"-------------------------------------------------------------"},
+                {"Physics (TH)", "\t85", "\t\t28", "\t", String.valueOf(physicsTH) },
+//                {"-------------------------------------------------------------"},
+                {"Physics (PR)", "\t15", "\t\t5", "\t", String.valueOf(physicsPR) },
+//                {"-------------------------------------------------------------"},
+                {"Elective Math", "\t100", "\t\t33", "\t", String.valueOf(maths) },
+//                {"-------------------------------------------------------------"},
+                {"\t\t\t\t\t", "Grace Marks (3%)"},
+//                {"-------------------------------------------------------------"},
+                {"\t\t\t\t", "850", "\t\t\t\t", String.valueOf(obtMarks)},
+//                {"-------------------------------------------------------------"},
+        };
+
+        // Printing 2-D Arrays
+        for (String [] elements:table) {
+            for (String element:elements) {
+                System.out.print(element +"\t");
+            }
+            System.out.println(" ");
+        }
+
+        // Printing Result Based On Marks
+        if(obtMarks >= 280){
+            System.out.print("Result: Pass");
+        }
+
+        else {
+            System.out.print("Result: Fail");
+        }
+
+        System.out.print("\t\t\t\t\t\t\t");
+        // Printing Percentage
+        System.out.println("Percentage: " + percentage);
+
+        // Printing Date
+        System.out.print("Date of Issuance: " + dateNow + "\t\t\t");
+
+        // Printing Grade Based On Marks
+        if (obtMarks > 680){
+            System.out.println("Grade: A-1");
+        }
+        else if (obtMarks >= 595 && obtMarks <= 679){
+            System.out.println("Grade: A");
+        }
+        else if (obtMarks >= 510 && obtMarks <= 594){
+            System.out.println("Grade: B");
+        }
+        else if (obtMarks >= 425 && obtMarks <= 509){
+            System.out.println("Grade: C");
+        }
+        else if (obtMarks >= 340 && obtMarks <= 424){
+            System.out.println("Grade: D");
+        }
+        else if (obtMarks >= 280 && obtMarks <= 339){
+            System.out.println("Grade: E");
+        }
+        else{
+            System.out.println("Grade: Null");
+        }
+        // Printing Date of Birth
+        System.out.println("Date of Birth: " + dateOfBirth);
+
+    }
+}

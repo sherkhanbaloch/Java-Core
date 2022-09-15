@@ -1,0 +1,104 @@
+package Marks_Sheet;
+
+import java.util.Scanner;
+
+public class Marks_Sheet {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter Your Name:");
+        String name = input.nextLine();
+
+        System.out.println("Enter Your Caste:");
+        String caste = input.nextLine();
+
+        System.out.println("Enter Your Class:");
+        String Class = input.nextLine();
+
+
+        System.out.println("Subjects Information");
+
+        System.out.println("English Marks:");
+        int english = input.nextInt();
+
+        System.out.println("Sindhi Marks:");
+        int sindhi = input.nextInt();
+
+        System.out.println("Math Marks:");
+        int math = input.nextInt();
+
+        System.out.println("Science Marks:");
+        int science = input.nextInt();
+
+        System.out.println("Computer Marks:");
+        int computer = input.nextInt();
+
+        int obtmarks = english + sindhi + math + science + computer;
+
+        float percentage = (float) obtmarks / 450 * 100;
+
+            System.out.println("		Research Gate | Modern Technology Solution & Training Center");
+
+            System.out.println("Name: " + name);
+            System.out.println("Caste: " + caste);
+            System.out.println("Class: " + Class);
+
+            System.out.println("English: " + english);
+            System.out.println("Sindhi: " + sindhi);
+            System.out.println("Maths: " + math);
+            System.out.println("Science: " + science);
+            System.out.println("Computer: " + computer);
+
+            System.out.println("Total Marks: " + obtmarks);
+
+//              Grade On Marks:
+//          if (obtmarks>400){
+//              System.out.println("Grade: A-1");
+//          }
+
+//          else if (obtmarks>=300 && obtmarks<400){
+//              System.out.println("Grade: A");
+//          }
+
+//          else if (obtmarks>=200 && obtmarks<300){
+//              System.out.println("Grade: B");
+//          }
+
+//          else if (obtmarks>=100 && obtmarks<200){
+//              System.out.println("Grade: C");
+//          }
+//
+//          else {
+//              System.out.println("Result: Fail");
+//          }
+
+//              Grade On Percentage:
+            if (percentage>=80){
+                System.out.println("Grade: A-1");
+            }
+
+            else if (percentage>=70 && percentage<80){
+                System.out.println("Grade: A");
+            }
+
+            else if (percentage>=50 && percentage<70){
+                System.out.println("Grade: B");
+            }
+
+            else if (percentage>=40 && percentage<50){
+                System.out.println("Grade: C");
+            }
+
+            else if (percentage<40){
+                System.out.println("Result: Fail");
+            }
+
+            else {
+                System.out.println("Sorry We Could Not Found The Result!");
+            }
+
+            System.out.println("Percentage: " + percentage);
+
+    }
+}

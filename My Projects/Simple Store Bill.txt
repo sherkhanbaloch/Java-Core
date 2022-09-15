@@ -1,0 +1,109 @@
+package practice;
+import java.util.Scanner;
+
+public class Practice {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        reports obj = new reports();
+
+        int choice;
+        do {
+            // Display Menu
+            obj.dashboard();
+
+            // Get User Choice
+            System.out.print("Enter Choice: ");
+            choice = input.nextInt();
+
+            // Do Something With Choice
+            switch (choice){
+                case 1:
+                    obj.customerRegistration();
+                    break;
+                case 2:
+                    obj.productRegistration();
+                    break;
+                case 3:
+                    obj.suppliesRegistration();
+                    break;
+                case 4:
+                    obj.report();
+                    break;
+                case 0:
+                    return;
+                default:
+                    System.out.println("Invalid Choice!");
+            }
+
+        }while (choice!=0);
+    }
+}
+class Dashboard{
+    Scanner input = new Scanner(System.in);
+    public void dashboard(){
+        System.out.println("------- Simple Project -------");
+        System.out.println("01. Customer Registration");
+        System.out.println("02. Product Registration");
+        System.out.println("03. Supplies Registration");
+        System.out.println("04. View Report");
+        System.out.println("0.  Quit");
+    }
+}
+
+class customer extends Dashboard{
+    int id;
+    String customerName;
+    String customerAddress;
+    public void customerRegistration(){
+        System.out.println("------- Customer Registration -------");
+        System.out.println("Enter Customer ID:");
+        id = input.nextInt();
+        System.out.println("Enter Customer Name:");
+        input.nextLine();
+        customerName = input.nextLine();
+        System.out.println("Enter Customer Address:");
+        customerAddress = input.nextLine();
+    }
+}
+
+class product extends customer{
+    String productName;
+    int quantity;
+    int price;
+    public void productRegistration(){
+        System.out.println("------- Product Registration -------");
+        System.out.println("Enter Product Name:");
+        productName = input.nextLine();
+        System.out.println("Enter Product Quantity:");
+        quantity = input.nextInt();
+        System.out.println("Enter Product Price");
+        price = input.nextInt();
+    }
+}
+
+class Supplies extends product{
+    String shopName;
+    String shopAddress;
+    public void suppliesRegistration(){
+        System.out.println("------- Supplies Registration -------");
+        System.out.println("Enter Shop Name:");
+        input.nextLine();
+        shopName = input.nextLine();
+        System.out.println("Enter Shop Address:");
+        shopAddress = input.nextLine();
+    }
+}
+
+class reports extends Supplies{
+    public void report(){
+        System.out.println("------- Your Report -------");
+        System.out.println("Customer ID: " + id);
+        System.out.println("Customer Name: " + customerName);
+        System.out.println("Customer Address: " + customerAddress);
+        System.out.println("Product Name: " + productName);
+        System.out.println("Product Quantity: " + quantity);
+        System.out.println("Product Price: " + price);
+        System.out.println("Shop Name: " + shopName);
+        System.out.println("Shop Address: " + shopAddress);
+    }
+}
